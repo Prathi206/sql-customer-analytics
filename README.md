@@ -1,55 +1,48 @@
-# SQL Customer Analytics
+# SQL Data Analytics Project
 
-## Overview
-This project analyzes customer transaction data to identify revenue contribution, purchase behavior, and retention patterns using SQL.
+A structured collection of SQL scripts focused on data exploration, analytics, and reporting use cases within a relational database environment.
 
-## Business Objective
-- Identify high-value customers
-- Analyze revenue distribution
-- Track monthly sales trends
-- Segment repeat vs one-time customers
+This project demonstrates the application of SQL to analyze datasets, generate performance metrics, evaluate trends, and perform segmentation to support business decision-making.
 
-## Tools Used
-- SQL (MySQL / SQL Server)
-- Aggregations
-- Window Functions
-- CASE statements
+---
 
-## Dataset
-Transactional data containing:
-- customer_id
-- order_id
-- order_date
-- revenue
-- product_category
+## Project Scope
 
-## Key Insights
-- A small percentage of customers contributed a major share of total revenue.
-- Repeat customers generated higher cumulative revenue compared to one-time buyers.
-- Revenue trends showed variation across different months.
-- Customers inactive for more than 90 days were identified as potential churn risk.
+The analysis performed in this repository includes:
 
-## Sample Analysis
+- Database exploration and schema understanding  
+- Revenue and performance metric calculations  
+- Time-based trend analysis  
+- Cumulative and rolling metrics  
+- Customer segmentation logic  
+- Reporting-focused SQL queries  
 
-### Revenue by Customer
-```sql
-SELECT customer_id, SUM(revenue) AS total_revenue
-FROM orders
-GROUP BY customer_id
-ORDER BY total_revenue DESC;
-```
+Each script focuses on a specific analytical theme and follows structured query design principles.
 
-### Customer Ranking
-```sql
-SELECT 
-    customer_id,
-    SUM(revenue) AS total_revenue,
-    RANK() OVER (ORDER BY SUM(revenue) DESC) AS revenue_rank
-FROM orders
-GROUP BY customer_id;
-```
+---
 
-## Conclusion
-This project demonstrates the use of SQL to transform raw transactional data into actionable business insights.  
-The analysis highlights customer revenue concentration, purchase behavior trends, and segmentation logic that can support data-driven decision-making.
+## Technical Implementation
+
+The project applies the following SQL concepts:
+
+- Aggregation functions (SUM, COUNT, AVG)  
+- GROUP BY and HAVING clauses  
+- Window functions (RANK, ROW_NUMBER, cumulative calculations)  
+- Subqueries and derived tables  
+- CASE expressions for segmentation  
+- Date functions for time-series analysis  
+
+The queries are written to reflect practical business reporting scenarios commonly encountered in analytics roles.
+
+---
+
+## Repository Structure
+
+- `datasets/` → Sample or structured data files  
+- `scripts/` → SQL scripts organized by analytical theme  
+- `docs/` → Supporting documentation (if applicable)  
+
+---
+
+
 
